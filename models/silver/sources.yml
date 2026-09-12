@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: bronze
+    schema: bronze
+
+    quoting:
+      database: false
+      schema: false
+      identifier: true
+
+    tables:
+      - name: GA4___Sessoes_organicas
+        identifier: GA4___Sessoes_organicas
+
+      - name: GSC___Search_Console
+        identifier: GSC___Search_Console

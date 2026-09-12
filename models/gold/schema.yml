@@ -1,0 +1,98 @@
+version: 2
+
+models:
+  - name: seo__page_device_daily
+    description: >
+      Gold table with daily SEO and GA4 performance aggregated by date,
+      page and device. Combines GA4 and Google Search Console metrics.
+
+    columns:
+      - name: dt_date
+        description: Reference date.
+        tests:
+          - not_null
+
+      - name: str_page
+        description: Page path.
+        tests:
+          - not_null
+
+      - name: str_device
+        description: Device category.
+        tests:
+          - not_null
+
+      - name: int_sessions
+        description: Total GA4 sessions.
+
+      - name: int_conversions
+        description: Total conversions.
+
+      - name: int_engaged_sessions
+        description: Total engaged sessions.
+
+      - name: flt_revenue
+        description: Total revenue.
+
+      - name: flt_conversion_rate
+        description: Conversion rate calculated as conversions divided by sessions.
+
+      - name: flt_revenue_per_session
+        description: Revenue divided by sessions.
+
+      - name: flt_engagement_rate
+        description: Engagement rate calculated as engaged sessions divided by sessions.
+
+      - name: flt_avg_engagement_time_sec
+        description: Weighted average engagement time in seconds.
+
+      - name: int_clicks
+        description: Total organic clicks from Google Search Console.
+
+      - name: int_impressions
+        description: Total organic impressions from Google Search Console.
+
+      - name: flt_ctr
+        description: Weighted CTR calculated as clicks divided by impressions.
+
+      - name: flt_position
+        description: Average search position weighted by impressions.
+
+
+  - name: seo__query_page_device_daily
+    description: >
+      Gold table with daily Google Search Console performance aggregated by
+      date, page, query and device.
+
+    columns:
+      - name: dt_date
+        description: Reference date.
+        tests:
+          - not_null
+
+      - name: str_page
+        description: Page path.
+        tests:
+          - not_null
+
+      - name: str_query
+        description: Search query.
+        tests:
+          - not_null
+
+      - name: str_device
+        description: Device category.
+        tests:
+          - not_null
+
+      - name: int_clicks
+        description: Total organic clicks.
+
+      - name: int_impressions
+        description: Total organic impressions.
+
+      - name: flt_ctr
+        description: Weighted CTR calculated as clicks divided by impressions.
+
+      - name: flt_position
+        description: Average search position weighted by impressions.

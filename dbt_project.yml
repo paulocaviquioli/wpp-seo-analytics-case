@@ -1,0 +1,26 @@
+name: 'wpp_seo_analytics_case'
+version: '1.0.0'
+config-version: 2
+
+profile: 'wpp_seo_analytics_case'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  wpp_seo_analytics_case:
+    silver:
+      +schema: silver
+      +materialized: view
+
+    gold:
+      +schema: gold
+      +materialized: table
